@@ -90,6 +90,7 @@ function playGame() {
 const game = playGame();
 const buttons = document.querySelectorAll("button")
 const results = document.createElement("div");
+results.className = "results-display";
 document.body.appendChild(results);
 
 function updateDisplay(roundResult = "Game not started") {
@@ -112,9 +113,10 @@ buttons.forEach((button) => {
 
             buttons.forEach(btn => btn.disabled = true);
 
-            const replay = document.createElement("button")
-            replay.textContent = "Replay"
-            document.body.appendChild(replay)
+            const replay = document.createElement("button");
+            replay.textContent = "Replay";
+            replay.className = "replay-button";
+            document.body.appendChild(replay);
 
             replay.addEventListener("click", () => {
                 game.reset()

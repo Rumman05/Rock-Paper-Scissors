@@ -1,0 +1,82 @@
+#buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+#rps {
+    font-size: 100px;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+/* Modified from Uiverse.io by Voxybuns to work with simple button structure */ 
+button {
+  /* Variables */
+  --button_radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #000000;
+  font-size: 17px;
+  font-weight: bold;
+  border: 2px solid var(--button_outline_color);
+  cursor: pointer;
+  border-radius: var(--button_radius);
+  padding: 0.75em 1.5em;
+  background: var(--button_color);
+  color: var(--button_outline_color);
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+  box-shadow: 0 0.2em 0 var(--button_outline_color);
+}
+
+button:hover {
+  /* Pull the button upwards when hovered */
+  transform: translateY(-0.33em);
+  box-shadow: 0 0.33em 0 var(--button_outline_color);
+}
+
+button:active {
+  /* Push the button downwards when pressed */
+  transform: translateY(0);
+  box-shadow: 0 0 0 var(--button_outline_color);
+}
+
+.results-display {
+    font-size: 18px;
+    margin: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.replay-button {
+    display: block;
+    margin: 10px auto;
+    --button_radius: 0.75em;
+    --button_color: #4CAF50;
+    --button_outline_color: #2E7D32;
+    font-size: 17px;
+    font-weight: bold;
+    border: 2px solid var(--button_outline_color);
+    cursor: pointer;
+    border-radius: var(--button_radius);
+    padding: 0.75em 1.5em;
+    background: var(--button_color);
+    color: white;
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+    box-shadow: 0 0.2em 0 var(--button_outline_color);
+}
+
+.replay-button:hover {
+    transform: translateY(-0.33em);
+    box-shadow: 0 0.33em 0 var(--button_outline_color);
+}
+
+.replay-button:active {
+    transform: translateY(0);
+    box-shadow: 0 0 0 var(--button_outline_color);
+}
