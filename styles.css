@@ -11,6 +11,42 @@
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
+/* Battle display styling */
+#battle-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 40px 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.choice-display {
+    text-align: center;
+    padding: 20px;
+    border: 3px solid #000;
+    border-radius: 15px;
+    background-color: #f5f5f5;
+    min-width: 120px;
+}
+
+.choice-label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.choice-icon {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+#vs {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff6b6b;
+}
+
 /* Modified from Uiverse.io by Voxybuns to work with simple button structure */ 
 button {
   /* Variables */

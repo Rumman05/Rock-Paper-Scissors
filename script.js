@@ -1,4 +1,3 @@
-
 function getComputerChoice() {
     const choice = Math.random()
 
@@ -20,6 +19,47 @@ function getHumanChoice(a) {
     } else if (a == "Scissors") {
         return 2;
     } 
+}
+
+//Function to convert number choices to visual symbols
+function getChoiceSymbol(choice) {
+    if (choice === 0) return "🪨"; // Rock
+    if (choice === 1) return "📄"; // Paper  
+    if (choice === 2) return "✂️"; // Scissors
+    return "?"; // Default when no choice made
+}
+
+//Function to update the visual battle display
+function updateBattleDisplay(humanChoice, computerChoice) {
+    const humanIcon = document.querySelector("#human-choice .choice-icon");
+    const computerIcon = document.querySelector("#computer-choice .choice-icon");
+    
+    // Update the visual symbols
+    humanIcon.textContent = getChoiceSymbol(humanChoice);
+    computerIcon.textContent = getChoiceSymbol(computerChoice);
+}
+
+//Function to reset the battle display
+function resetBattleDisplay() {
+    const humanIcon = document.querySelector("#human-choice .choice-icon");
+    const computerIcon = document.querySelector("#computer-choice .choice-icon");
+    
+    humanIcon.textContent = "?";
+    computerIcon.textContent = "?";
+}
+
+//Function to show the game winner in the battle display
+function showGameWinner(winner) {
+    const humanIcon = document.querySelector("#human-choice .choice-icon");
+    const computerIcon = document.querySelector("#computer-choice .choice-icon");
+    
+    if (winner === "You have won the game!") {
+        humanIcon.textContent = "🏆"; // Trophy for human winner
+        computerIcon.textContent = "😞"; // Sad face for computer
+    } else if (winner === "You have lost the game") {
+        humanIcon.textContent = "😞"; // Sad face for human
+        computerIcon.textContent = "🏆"; // Trophy for computer winner
+    }
 }
 
 
@@ -103,6 +143,10 @@ buttons.forEach((button) => {
 
         const humanSelection = getHumanChoice(choice);
         const computerSelection = getComputerChoice();
+        
+        //Update the visual battle display
+        updateBattleDisplay(humanSelection, computerSelection);
+        
         let result = game.playRound(humanSelection, computerSelection);
         updateDisplay(result);
 
@@ -110,6 +154,9 @@ buttons.forEach((button) => {
         if (gameWinner) {
             console.log(gameWinner)
             updateDisplay(gameWinner)
+            
+            //Show winner symbols in the battle display
+            showGameWinner(gameWinner);
 
             buttons.forEach(btn => btn.disabled = true);
 
@@ -123,6 +170,8 @@ buttons.forEach((button) => {
                 buttons.forEach(btn => btn.disabled = false);
                 replay.remove();
                 updateDisplay();
+                //Reset the battle display when replaying
+                resetBattleDisplay();
             })
         }
         
@@ -130,6 +179,3 @@ buttons.forEach((button) => {
 })
 
 updateDisplay();
-
-
-
