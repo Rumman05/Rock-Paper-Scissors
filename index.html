@@ -7,104 +7,14 @@
 </head>
 <body>
     
-    <script>
-
-        function getComputerChoice() {
-            const choice = Math.random()
-
-            if (choice <= 0.33) {
-                return 0;
-            } else if (choice > 0.33 && choice <= 0.66) {
-                return 1;
-            } else if (choice > 0.66) {
-                return 2;
-            }
-        }
-
-        function getHumanChoice() {
-
-            let a = prompt("Rock, Paper or Scissors:")
-
-            if (a == "Rock") {
-                return 0;
-            } else if (a == "Paper") {
-                return 1;
-            } else if (a == "Scissors") {
-                return 2;
-            } 
-        }
-            
-
-        function playGame() {
-            
-            let humanScore = 0;
-            let computerScore = 0;
-
-            function playRound(humanChoice, computerChoice) {
-                if (computerChoice == 0) {
-                    if (humanChoice == 0) {
-                        return "Draw"
-                    } else if (humanChoice == 1) {
-                        humanScore++
-                        return "You Win!"
-                    } else if (humanChoice == 2) {
-                        computerScore++
-                        return "You Lose"
-                    }
-                }
-
-                if (computerChoice == 1){
-                    if (humanChoice == 0) {
-                        computerScore++
-                        return "You Lose"
-                    } else if (humanChoice == 1) {
-                        return "Draw"
-                    } else if (humanChoice == 2) {
-                        humanScore++
-                        return "You Win!"
-                    }
-                }
-
-                if (computerChoice == 2) {
-                    if (humanChoice == 0) {
-                        humanScore++
-                        return "You Win!"
-                    } else if (humanChoice == 1) {
-                        computerScore++
-                        return "You Lose"
-                    } else if (humanChoice == 2) {
-                        return "Draw"
-                    }
-                }
-            }   
-
-            function winner() {
-
-                if (humanScore > computerScore) {
-                    return "You Won the Game!"
-                } else if (humanScore < computerScore) {
-                    return "You Lost the Game"
-                }
-            }
-
-        return {playRound, winner}
-
-        }
-
-        const game = playGame();
-
-        for (let i = 0; i < 5; i++){
-            const humanSelection = getHumanChoice();
-            const computerSelection = getComputerChoice();
-            console.log(computerSelection)
-            let result = game.playRound(humanSelection, computerSelection);
-            console.log(result)
-        }
-
-        console.log(game.winner())
     
+    <div id="buttons">
+        <button id="Rock">Rock</button>
+        <button id="Paper">Paper</button>
+        <button id="Scissors">Scissors</button>
+    </div>
 
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
